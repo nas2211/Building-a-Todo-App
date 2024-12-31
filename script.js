@@ -28,9 +28,9 @@ const addOrUpdateTask = () => {
       .toLowerCase()
       .split(" ")
       .join("-")}-${Date.now()}`,
-    title: titleInput.value,
+    title: removeSpecialChars(titleInput.value),
     date: dateInput.value,
-    description: descriptionInput.value,
+    description: removeSpecialChars(descriptionInput.value), //descriptionInput.value,
   };
 
   if (dataArrIndex === -1) {

@@ -29,9 +29,10 @@ var addOrUpdateTask = function addOrUpdateTask() {
   });
   var taskObj = {
     id: "".concat(removeSpecialChars(titleInput.value).toLowerCase().split(" ").join("-"), "-").concat(Date.now()),
-    title: titleInput.value,
+    title: removeSpecialChars(titleInput.value),
     date: dateInput.value,
-    description: descriptionInput.value
+    description: removeSpecialChars(descriptionInput.value) //descriptionInput.value,
+
   };
 
   if (dataArrIndex === -1) {
